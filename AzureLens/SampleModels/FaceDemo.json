@@ -1,0 +1,415 @@
+﻿{
+  "objects": [
+    {
+      "id": "Web Site",
+      "type": "BOX_TYPE.VM",
+      "position2": { "x": 0, "y": 0 },
+      "pinnedToMenu": true,
+      "menuName": "1 - How-old.net",
+      "description": "how-old.net is a website hosted on Azure that makes use of the Oxford APIs."    
+    },
+    {
+      "id": "box2d Web Server",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -5, "y": -5 },
+        { "x": 16, "y": 5 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text Web Server",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 3, "y": -6 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "How-Old.net"
+    },
+    {
+      "id": "EventHub",
+      "type": "BOX_TYPE.EventHubs",
+      "position2": { "x": 1, "y": 20 },
+      "pinnedToMenu": true,
+      "menuName": "3 - Event Hubs",
+      "description": "This metadata (without the photo) is sent to event hubs. Event hubs can handle a very large volume of data and will feed Stream Analytics with it."    
+    },
+    {
+      "id": "box2d EventHub",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -3, "y": 16 },
+        { "x": 5, "y": 24 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text EventHub",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -1, "y": 15 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Event Hubs"
+    },
+    {
+      "id": "StreamAnalytics",
+      "type": "BOX_TYPE.StreamAnalytics",
+      "position2": { "x": 1, "y": 40 },
+      "pinnedToMenu": true,
+      "menuName": "4 - Stream Analytics",
+      "description": "Stream analytics will process and aggregate data using a simple, well know SQL syntax and then feed Power BI where a nice, customizable dashboard will be available. Optionally, for more advanced scenarios, we can also feed into HDInsights which is Hadoop on Azure for more advanced data processing capabilities"    
+
+    },
+    {
+      "id": "box2d StreamAnalytics",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -3, "y": 36 },
+        { "x": 5, "y": 44 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text StreamAnalytics",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -1, "y": 35 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Stream Analytics"
+    },
+    {
+      "id": "Arrow Hadoop",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": 1, "y": 45 },
+        { "x": 1, "y": 48 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "Arrow Event Hub",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": 1, "y": 6 },
+        { "x": 1, "y": 13 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "Arrow Event Hub Dest",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": -6, "y": 40 },
+        { "x": -33, "y": 40 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "Arrow SA",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": 1, "y": 26 },
+        { "x": 1, "y": 33 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "Azure Website",
+      "type": "BOX_TYPE.WebSite",
+      "position2": { "x": -40, "y": 20 }
+    },
+    {
+      "id": "box2d azure website",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -36, "y": 16 },
+        { "x": -44, "y": 24 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text Dashboard",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -43.5, "y": 15 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Custom Dashboard"
+    },
+    {
+      "id": "EventHubs2",
+      "type": "BOX_TYPE.EventHubs",
+      "position2": { "x": -40, "y": 40 },
+      "pinnedToMenu": true,
+      "menuName": "5 - Event Hubs (output)",
+      "description": "Stream analytics will also feed a second event hub with the processed data where a custom build dashboard can read that from with very simple .Net code."    
+    },
+    {
+      "id": "text EventHubs2",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -43.5, "y": 35 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Event Hubs (output)"
+    },
+    {
+      "id": "Arrow Website",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": -40, "y": 33 },
+        { "x": -40, "y": 26 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "box2d SQL",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -36, "y": 36 },
+        { "x": -44, "y": 44 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "Azure ML",
+      "type": "BOX_TYPE.MachineLearning",
+      "position2": { "x": -20, "y": 20 },
+      "pinnedToMenu": true,
+      "menuName": "2 - Oxford Face API",
+      "description": "The site calls the Face API from the Project Oxford and receives some metadata back, like gender and age of the people in the photo."
+    },
+    {
+      "id": "box2d ML",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -16, "y": 16 },
+        { "x": -24, "y": 24 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text ML",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -23, "y": 15 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Oxford - Face API"
+    },
+    {
+      "id": "Arrow Site to Face API",
+      "type": "ARROW_TYPE.ArrowTipBothEnds",
+      "points2": [
+        { "x": -20, "y": 12 },
+        { "x": -8, "y": 0 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+
+
+    {
+      "id": "HDInsight",
+      "type": "BOX_TYPE.HDInsight",
+      "position2": { "x": 10, "y": 70 }
+    },
+    {
+      "id": "box2d Hadoop",
+      "type": "BOX2D_TYPE.BorderOnly",
+      "points2": [
+        { "x": -5, "y": 74 },
+        { "x": 25, "y": 50 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text Hadoop",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 6.5, "y": 65 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "HDInsight (Hadoop)"
+    },
+    {
+      "id": "box2d SQOOP",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": -2, "y": 62 },
+        { "x": 4, "y": 58 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text SQOOP",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": -0.3, "y": 60.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "SQOOP"
+    },
+    {
+      "id": "box2d Hive",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": -2, "y": 56 },
+        { "x": 4, "y": 52 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text Hive",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 0.3, "y": 54.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Hive"
+    },
+
+    {
+      "id": "box2d HBase",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": 7, "y": 62 },
+        { "x": 13, "y": 58 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text HBase",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 9, "y": 60.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "HBase"
+    },
+    {
+      "id": "box2d Pig",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": 7, "y": 56 },
+        { "x": 13, "y": 52 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text Pig",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 7.3, "y": 54.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Pig/MapReduce"
+    },
+    {
+      "id": "box2d Oozie",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": 16, "y": 62 },
+        { "x": 22, "y": 58 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text Oozie",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 18, "y": 60.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Oozie"
+    },
+    {
+      "id": "box2d Storm",
+      "type": "BOX2D_TYPE.Filled",
+      "points2": [
+        { "x": 16, "y": 56 },
+        { "x": 22, "y": 52 }
+      ],
+      "color4": [ 0.5, 0, 0.1, 1 ]
+    },
+    {
+      "id": "text Storm",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 18, "y": 54.5 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Storm"
+    },
+    {
+      "id": "img1",
+      "type": "IMAGE_TYPE.Floating",
+      "position2": { "x": -39, "y": -5 },
+      "image": "assets/logos/Generic man 1.png",
+      "size": 15,
+      "height": 1
+    },
+    {
+      "id": "img2",
+      "type": "IMAGE_TYPE.Floating",
+      "position2": { "x": 0, "y": -30 },
+      "image": "assets/logos/Generic people 1.png",
+      "size": 15,
+      "height": 1
+    },
+    {
+      "id": "img3",
+      "type": "IMAGE_TYPE.Floating",
+      "position2": { "x": 10, "y": 0 },
+      "image": "assets/logos/Generic Files.png",
+      "size": 5,
+      "height": 2
+    },
+    {
+      "id": "text log data",
+      "type": "TEXT_TYPE.Floating",
+      "position2": { "x": 9, "y": 0 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Log Data",
+      "height": -1
+    },
+    {
+      "id": "imgPowerBI",
+      "type": "IMAGE_TYPE.Flat",
+      "position2": { "x": 25, "y": 40 },
+      "image": "assets/logos/Cloud, Office 365.png",
+      "size": 15
+    },
+     {
+      "id": "Arrow PowerBI",
+      "type": "ARROW_TYPE.ArrowTip",
+      "points2": [
+        { "x": 7, "y": 40 },
+        { "x": 17, "y": 40 }
+      ],
+      "color4": [ 0.5, 0.5, 1, 1 ]
+    },
+    {
+      "id": "box2d PowerBI",
+      "type": "BOX2D_TYPE.Flat",
+      "points2": [
+        { "x": 21, "y": 36 },
+        { "x": 29, "y": 44 }
+      ],
+      "color4": [ 1, 1, 1, 1 ]
+    },
+    {
+      "id": "text Power BI",
+      "type": "TEXT_TYPE.Flat",
+      "position2": { "x": 24, "y": 35 },
+      "color4": [ 1, 1, 1, 1 ],
+      "fontSize": 60,
+      "fontName": "Segoe UI",
+      "text": "Power BI"
+    }
+
+  ]
+}
