@@ -1,6 +1,4 @@
-//   AzureLens prototype.
-//2015 Microsoft.All rights reserved.
-//Contact: mat.velloso@microsoft.com
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
 ///<reference path="typings/babylon.2.1.d.ts" />
 ///<reference path="typings/waa.d.ts" />
 ///<reference path="typings/jquery/jquery.d.ts" />
@@ -309,7 +307,7 @@ var AzureLens = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 0.75, 0 /* LOCAL */);
+        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 0.75, BABYLON.Space.LOCAL);
         cylinder.material = multimat;
         cylinder.subMeshes = [];
         var verticesCount = cylinder.getTotalVertices();
@@ -374,7 +372,7 @@ var AzureLens = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
         box.material = multimat;
         box.subMeshes = [];
         var verticesCount = box.getTotalVertices();
@@ -447,7 +445,7 @@ var AzureLens = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
         box.material = multimat;
         box.subMeshes = [];
         var verticesCount = box.getTotalVertices();
@@ -467,7 +465,7 @@ var AzureLens = (function () {
             arrow.scaling.y = 0.001;
             var angle = -Math.atan2(point1.y - point2.y, point1.x - point2.x) + Math.PI / 2;
             arrow.position = new BABYLON.Vector3(point3.x, this.PLANE_SIZE * 0.001 + 0.11, point3.y);
-            arrow.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+            arrow.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
             arrow.material = new BABYLON.StandardMaterial("texture1", this._scene);
             arrow.material.diffuseColor = backgroundColor;
             arrow.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -484,7 +482,7 @@ var AzureLens = (function () {
                 tip.scaling.y = 0.001;
                 angle = angle + Math.PI / 4;
                 tip.position = new BABYLON.Vector3(point2.x, this.PLANE_SIZE * 0.001 + 0.11, point2.y);
-                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                 tip.material = new BABYLON.StandardMaterial("texture1", this._scene);
                 tip.material.diffuseColor = backgroundColor;
                 tip.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -501,7 +499,7 @@ var AzureLens = (function () {
                 tip.scaling.z = 0.2;
                 tip.scaling.y = 0.001;
                 tip.position = new BABYLON.Vector3(point1.x, this.PLANE_SIZE * 0.001 + 0.11, point1.y);
-                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                 tip.material = new BABYLON.StandardMaterial("texture1", this._scene);
                 tip.material.diffuseColor = backgroundColor;
                 tip.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -543,7 +541,7 @@ var AzureLens = (function () {
                     line.scaling.y = 0.001;
                     var angle = -Math.atan2(point1.y - point2.y, point1.x - point2.x) + Math.PI / 2;
                     line.position = new BABYLON.Vector3(point3.x, this.PLANE_SIZE * 0.001, point3.y);
-                    line.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                    line.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                     line.material = new BABYLON.StandardMaterial("texture1", this._scene);
                     line.material.diffuseColor = new BABYLON.Color3(0.7, 0.7, 0.7);
                     line.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -633,8 +631,8 @@ var AzureLens = (function () {
                 var multimat = new BABYLON.MultiMaterial("multi", this._scene);
                 multimat.subMaterials.push(material0);
                 multimat.subMaterials.push(material1);
-                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
-                box.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, 0 /* LOCAL */);
+                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
+                box.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
                 box.scaling.z = 0.0001;
                 box.scaling.x = size / this.BOX_SIZE;
                 box.scaling.y = size / this.BOX_SIZE;
@@ -675,7 +673,7 @@ var AzureLens = (function () {
                 var multimat = new BABYLON.MultiMaterial("multi", this._scene);
                 multimat.subMaterials.push(material0);
                 multimat.subMaterials.push(material1);
-                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
                 box.scaling.z = 0.0001;
                 box.scaling.x = size / this.BOX_SIZE;
                 box.scaling.y = size / this.BOX_SIZE;
@@ -775,7 +773,7 @@ var AzureLens = (function () {
                 if (rotate == null)
                     box.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
                 else
-                    box.rotate(new BABYLON.Vector3(0, 1, 0), rotate * Math.PI / 180, 0 /* LOCAL */);
+                    box.rotate(new BABYLON.Vector3(0, 1, 0), rotate * Math.PI / 180, BABYLON.Space.LOCAL);
                 var o = new ObjectData();
                 o.ID = id;
                 o.Type = "TEXT_TYPE." + TEXT_TYPE[textType].toString();
@@ -1055,4 +1053,30 @@ var AzureLens = (function () {
     };
     return AzureLens;
 })();
+//*********************************************************   
+//   
+//AzureLens.Net, https://github.com/matvelloso/azurelens 
+//  
+//Copyright (c) Microsoft Corporation  
+//All rights reserved.   
+//  
+// MIT License:  
+// Permission is hereby granted, free of charge, to any person obtaining  
+// a copy of this software and associated documentation files (the  
+// ""Software""), to deal in the Software without restriction, including  
+// without limitation the rights to use, copy, modify, merge, publish,  
+// distribute, sublicense, and/or sell copies of the Software, and to  
+// permit persons to whom the Software is furnished to do so, subject to  
+// the following conditions:  
+// The above copyright notice and this permission notice shall be  
+// included in all copies or substantial portions of the Software.  
+// THE SOFTWARE IS PROVIDED ""AS IS"", WITHOUT WARRANTY OF ANY KIND,  
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND  
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE  
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION  
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION  
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
+//   
+//*********************************************************   
 //# sourceMappingURL=app.js.map
