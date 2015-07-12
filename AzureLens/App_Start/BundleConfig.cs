@@ -33,7 +33,8 @@ namespace AzureLens
                      "~/Scripts/Babylon.2.1.fix.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                     "~/Scripts/app.js"));
+                     "~/Scripts/app.js",
+                     "~/Scripts/app3DView.js"));
 
         }
     }
