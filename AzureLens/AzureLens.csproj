@@ -297,7 +297,6 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="SampleModels\AzureLens.json" />
     <Content Include="SampleModels\FaceDemo.json" />
-    <Content Include="SampleModels\SimplePresentation1.json" />
     <Content Include="assets\Spaceship\Spaceship.babylon" />
     <None Include="Properties\PublishProfiles\azurelens-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens-test - Web Deploy.pubxml" />
