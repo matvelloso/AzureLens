@@ -111,9 +111,30 @@
 
   
     <script type="text/javascript">
+
+        function querystring(param) {
+            var url = window.location.search.substring(1);
+            var a = url.split('&');
+            for (var i = 0; i < a.length; i++) {
+                var item = a[i].split('=');
+                if (item[0] == param) {
+                    return item[1];
+                }
+            }
+            return null;
+        }
+
+
         $(document).ready(function () {
+
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "SampleModels/AzureLens.json", true);
+            var githubparam = querystring("github");
+            var githubparamencoded = btoa(githubparam);
+            if (querystring("github")!=null){
+                xmlhttp.open("GET", "api/GitHub/" + btoa(querystring("github")), true);
+            }else{
+                xmlhttp.open("GET", "SampleModels/AzureLens.json", true);
+            }
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     lens = new AzureLens();
