@@ -4,6 +4,8 @@
 # AzureLens
 AzureLens is a demo project for managing and interacting with Azure via the existing public APIs. You can see how the project is becoming alive by looking at http://www.azurelens.net
 
+<img src="doc/AzureLens.png" width="700">
+
 AzureLens has 3 specific goals:
 
 1: <b>Be a place where we can "brainstorm", sketch and share architectural views of Azure based solutions.</b> This includes 3D and 2D views and the ability of calling AzureLens from simply hyperlinks, like the "View with AzureLens" button at the top of this Read Me page.
