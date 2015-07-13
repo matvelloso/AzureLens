@@ -302,6 +302,7 @@
     <None Include="Properties\PublishProfiles\azurelens-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens-test - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens.pubxml" />
+    <None Include="Properties\PublishProfiles\azurelens__test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hand.minified-1.2.js" />
     <Content Include="Scripts\hand.minified.js" />
