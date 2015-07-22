@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
-///<reference path="typings/babylon.2.1.d.ts" />
-///<reference path="typings/waa.d.ts" />
+///<reference path="typings/babylon.2.2.d.ts" />
 ///<reference path="typings/jquery/jquery.d.ts" />
 ///<reference path="IAppView.ts" />
 var app3DView = (function () {
@@ -117,7 +116,8 @@ var app3DView = (function () {
     };
     app3DView.prototype.rgbToHex = function (n) {
         n = Math.max(0, Math.min(n, 255));
-        return "0123456789ABCDEF".charAt((n - n % 16) / 16) + "0123456789ABCDEF".charAt(n % 16);
+        return "0123456789ABCDEF".charAt((n - n % 16) / 16)
+            + "0123456789ABCDEF".charAt(n % 16);
     };
     app3DView.prototype.createBaseBox = function () {
         var box = BABYLON.Mesh.CreateBox("box", this.BOX_SIZE, this._scene);
@@ -142,25 +142,25 @@ var app3DView = (function () {
         cylinder.isPickable = true;
         cylinder.id = id;
         switch (cylinderType) {
-            case 0 /* AzureCache */:
+            case CYLINDER_TYPE.AzureCache:
                 data.Image = "assets/logos/Azure Cache including Redis.png";
                 break;
-            case 1 /* AzureSQL */:
+            case CYLINDER_TYPE.AzureSQL:
                 data.Image = "assets/logos/Azure SQL Database.png";
                 break;
-            case 2 /* DocumentDB */:
+            case CYLINDER_TYPE.DocumentDB:
                 data.Image = "assets/logos/DocumentDB.png";
                 break;
-            case 3 /* MySQL */:
+            case CYLINDER_TYPE.MySQL:
                 data.Image = "assets/logos/MySQL database.png";
                 break;
-            case 5 /* SQLDatabase */:
+            case CYLINDER_TYPE.SQLDatabase:
                 data.Image = "assets/logos/SQL Database (generic).png";
                 break;
-            case 4 /* SQLDataSync */:
+            case CYLINDER_TYPE.SQLDataSync:
                 data.Image = "assets/logos/SQL Data Sync.png";
                 break;
-            case 6 /* BlobStorage */:
+            case CYLINDER_TYPE.BlobStorage:
                 data.Image = "assets/logos/Storage Blob.png";
                 break;
             default:
@@ -173,12 +173,12 @@ var app3DView = (function () {
         material0.emissiveTexture = new BABYLON.Texture(data.Image, this._scene, true, true);
         material0.emissiveTexture.uAng = Math.PI;
         material0.emissiveTexture.wAng = Math.PI;
-        material0.emissiveTexture.vAng = Math.PI;
+        // (<BABYLON.Texture>material0.emissiveTexture).vAng = Math.PI;
         material0.emissiveTexture.getAlphaFromRGB = true;
         material0.emissiveTexture.hasAlpha = true;
         material0.emissiveTexture.uScale = 3.5;
         material0.emissiveTexture.uOffset = 0.77;
-        material0.emissiveTexture.vOffset = 0.1;
+        material0.emissiveTexture.vOffset = 0;
         material0.emissiveTexture.vScale = 1.1;
         material0.useAlphaFromDiffuseTexture = false;
         var material1 = new BABYLON.StandardMaterial("mat1", this._scene);
@@ -187,7 +187,7 @@ var app3DView = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 0.75, 0 /* LOCAL */);
+        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 1.75, BABYLON.Space.LOCAL);
         cylinder.material = multimat;
         cylinder.subMeshes = [];
         var verticesCount = cylinder.getTotalVertices();
@@ -229,7 +229,7 @@ var app3DView = (function () {
         box.isPickable = true;
         box.id = id;
         switch (lowboxType) {
-            case 0 /* Server */:
+            case LOWBOX_TYPE.Server:
                 data.Image = "assets/logos/CustomServer.png";
                 break;
             default:
@@ -252,7 +252,7 @@ var app3DView = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
         box.material = multimat;
         box.subMeshes = [];
         var verticesCount = box.getTotalVertices();
@@ -278,34 +278,34 @@ var app3DView = (function () {
         box.isPickable = true;
         box.id = id;
         switch (boxType) {
-            case 0 /* VM */:
+            case BOX_TYPE.VM:
                 data.Image = "assets/logos/VM symbol only.png";
                 break;
-            case 1 /* WebSite */:
+            case BOX_TYPE.WebSite:
                 data.Image = "assets/logos/Azure Websites.png";
                 break;
-            case 2 /* O365 */:
+            case BOX_TYPE.O365:
                 data.Image = "assets/logos/Office 365.png";
                 break;
-            case 3 /* GitRepo */:
+            case BOX_TYPE.GitRepo:
                 data.Image = "assets/logos/Git repository.png";
                 break;
-            case 4 /* GitHub */:
+            case BOX_TYPE.GitHub:
                 data.Image = "assets/logos/GitHub.png";
                 break;
-            case 5 /* VSO */:
+            case BOX_TYPE.VSO:
                 data.Image = "assets/logos/Visual Studio Online.png";
                 break;
-            case 6 /* MachineLearning */:
+            case BOX_TYPE.MachineLearning:
                 data.Image = "assets/logos/Machine Learning.png";
                 break;
-            case 7 /* HDInsight */:
+            case BOX_TYPE.HDInsight:
                 data.Image = "assets/logos/HDInsight.png";
                 break;
-            case 8 /* StreamAnalytics */:
+            case BOX_TYPE.StreamAnalytics:
                 data.Image = "assets/logos/Stream Analytics.png";
                 break;
-            case 9 /* EventHubs */:
+            case BOX_TYPE.EventHubs:
                 data.Image = "assets/logos/Event Hubs.png";
                 break;
             default:
@@ -325,7 +325,7 @@ var app3DView = (function () {
         var multimat = new BABYLON.MultiMaterial("multi", this._scene);
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
-        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+        box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
         box.material = multimat;
         box.subMeshes = [];
         var verticesCount = box.getTotalVertices();
@@ -345,7 +345,7 @@ var app3DView = (function () {
             arrow.scaling.y = 0.001;
             var angle = -Math.atan2(point1.y - point2.y, point1.x - point2.x) + Math.PI / 2;
             arrow.position = new BABYLON.Vector3(point3.x, this.PLANE_SIZE * 0.001 + 0.11, point3.y);
-            arrow.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+            arrow.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
             arrow.material = new BABYLON.StandardMaterial("texture1", this._scene);
             arrow.material.diffuseColor = backgroundColor;
             arrow.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -355,14 +355,14 @@ var app3DView = (function () {
             arrow.id = id;
             meshes.push(arrow);
             //Draw arrow tip?
-            if (count == points.length - 1 && (arrowType == 1 /* ArrowTip */ || arrowType == 2 /* ArrowTipBothEnds */)) {
+            if (count == points.length - 1 && (arrowType == ARROW_TYPE.ArrowTip || arrowType == ARROW_TYPE.ArrowTipBothEnds)) {
                 var tip = BABYLON.Mesh.CreateBox("arrow", this.BOX_SIZE, this._scene);
                 tip.scaling.x = 0.2;
                 tip.scaling.z = 0.2;
                 tip.scaling.y = 0.001;
                 angle = angle + Math.PI / 4;
                 tip.position = new BABYLON.Vector3(point2.x, this.PLANE_SIZE * 0.001 + 0.11, point2.y);
-                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                 tip.material = new BABYLON.StandardMaterial("texture1", this._scene);
                 tip.material.diffuseColor = backgroundColor;
                 tip.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -373,13 +373,13 @@ var app3DView = (function () {
                 meshes.push(tip);
             }
             //Draw arrow tip at both ends?
-            if (count == points.length - 1 && arrowType == 2 /* ArrowTipBothEnds */) {
+            if (count == points.length - 1 && arrowType == ARROW_TYPE.ArrowTipBothEnds) {
                 tip = BABYLON.Mesh.CreateBox("arrow", this.BOX_SIZE, this._scene);
                 tip.scaling.x = 0.2;
                 tip.scaling.z = 0.2;
                 tip.scaling.y = 0.001;
                 tip.position = new BABYLON.Vector3(point1.x, this.PLANE_SIZE * 0.001 + 0.11, point1.y);
-                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                tip.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                 tip.material = new BABYLON.StandardMaterial("texture1", this._scene);
                 tip.material.diffuseColor = backgroundColor;
                 tip.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -402,7 +402,7 @@ var app3DView = (function () {
     };
     app3DView.prototype.drawBox2D = function (id, box2DType, points, color) {
         switch (box2DType) {
-            case 0 /* BorderOnly */:
+            case BOX2D_TYPE.BorderOnly:
                 var points2 = [];
                 //Define flat box points
                 points2.push(new BABYLON.Vector2(points[0].x, points[0].y));
@@ -421,7 +421,7 @@ var app3DView = (function () {
                     line.scaling.y = 0.001;
                     var angle = -Math.atan2(point1.y - point2.y, point1.x - point2.x) + Math.PI / 2;
                     line.position = new BABYLON.Vector3(point3.x, this.PLANE_SIZE * 0.001, point3.y);
-                    line.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, 0 /* LOCAL */);
+                    line.rotate(new BABYLON.Vector3(0, 1, 0), -Math.PI / 2 + angle, BABYLON.Space.LOCAL);
                     line.material = new BABYLON.StandardMaterial("texture1", this._scene);
                     line.material.diffuseColor = new BABYLON.Color3(0.7, 0.7, 0.7);
                     line.material.specularColor = new BABYLON.Color3(0.7, 0.7, 0.7);
@@ -456,7 +456,7 @@ var app3DView = (function () {
                 else
                     throw "Two objects with the same id '" + id + "' are defined.";
                 break;
-            case 1 /* Filled */:
+            case BOX2D_TYPE.Filled:
                 var backgroundColor = new BABYLON.Color3(color.r, color.g, color.b);
                 var point = points[0].add(points[1]).multiplyByFloats(0.5, 0.5);
                 var box = BABYLON.Mesh.CreateBox("box2d", this.BOX_SIZE, this._scene);
@@ -487,7 +487,7 @@ var app3DView = (function () {
     };
     app3DView.prototype.drawImage = function (id, imageType, image, position, size, height) {
         switch (imageType) {
-            case 0 /* Flat */:
+            case IMAGE_TYPE.Flat:
                 var box = this.createBaseBox();
                 box.isPickable = true;
                 box.id = id;
@@ -511,8 +511,8 @@ var app3DView = (function () {
                 var multimat = new BABYLON.MultiMaterial("multi", this._scene);
                 multimat.subMaterials.push(material0);
                 multimat.subMaterials.push(material1);
-                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
-                box.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, 0 /* LOCAL */);
+                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
+                box.rotate(new BABYLON.Vector3(1, 0, 0), -Math.PI / 2, BABYLON.Space.LOCAL);
                 box.scaling.z = 0.0001;
                 box.scaling.x = size / this.BOX_SIZE;
                 box.scaling.y = size / this.BOX_SIZE;
@@ -530,7 +530,7 @@ var app3DView = (function () {
                 else
                     throw "Two objects with the same id '" + id + "' are defined.";
                 break;
-            case 1 /* Floating */:
+            case IMAGE_TYPE.Floating:
                 var box = this.createBaseBox();
                 box.isPickable = true;
                 box.id = id;
@@ -553,7 +553,7 @@ var app3DView = (function () {
                 var multimat = new BABYLON.MultiMaterial("multi", this._scene);
                 multimat.subMaterials.push(material0);
                 multimat.subMaterials.push(material1);
-                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, 0 /* LOCAL */);
+                box.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI, BABYLON.Space.LOCAL);
                 box.scaling.z = 0.0001;
                 box.scaling.x = size / this.BOX_SIZE;
                 box.scaling.y = size / this.BOX_SIZE;
@@ -579,7 +579,7 @@ var app3DView = (function () {
     };
     app3DView.prototype.drawText = function (id, textType, position, color, fontSize, text, fontName, height, rotate) {
         switch (textType) {
-            case 0 /* Flat */:
+            case TEXT_TYPE.Flat:
                 var box = BABYLON.Mesh.CreateBox("textbox2d", this.BOX_SIZE, this._scene);
                 box.scaling.y = 0.00001;
                 box.material = new BABYLON.StandardMaterial("texture1", this._scene);
@@ -620,7 +620,7 @@ var app3DView = (function () {
                 else
                     throw "Two objects with the same id '" + id + "' are defined.";
                 break;
-            case 1 /* Floating */:
+            case TEXT_TYPE.Floating:
                 var box = BABYLON.Mesh.CreateBox("textbox2d", this.BOX_SIZE, this._scene);
                 box.scaling.z = 0.00001;
                 box.material = new BABYLON.StandardMaterial("texture1", this._scene);
@@ -653,7 +653,7 @@ var app3DView = (function () {
                 if (rotate == null)
                     box.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
                 else
-                    box.rotate(new BABYLON.Vector3(0, 1, 0), rotate * Math.PI / 180, 0 /* LOCAL */);
+                    box.rotate(new BABYLON.Vector3(0, 1, 0), rotate * Math.PI / 180, BABYLON.Space.LOCAL);
                 var o = new ObjectData();
                 o.ID = id;
                 o.Type = "TEXT_TYPE." + TEXT_TYPE[textType].toString();

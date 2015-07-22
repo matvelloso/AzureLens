@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
-///<reference path="typings/babylon.2.1.d.ts" />
-///<reference path="typings/waa.d.ts" />
+///<reference path="typings/babylon.2.2.d.ts" />
 ///<reference path="typings/jquery/jquery.d.ts" />
 //*********************************************************   
 //   

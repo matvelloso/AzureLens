@@ -29,8 +29,7 @@ namespace AzureLens
                       "~/Content/basecss/jquery.multilevelpushmenu.css",
                       "~/Content/basecss/main.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/babylon").Include(
-                     "~/Scripts/Babylon.2.1.fix.js"));
+           
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                      "~/Scripts/app.js",

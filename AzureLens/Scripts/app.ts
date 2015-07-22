@@ -1,7 +1,4 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
-///<reference path="typings/babylon.2.1.d.ts" />
-///<reference path="typings/waa.d.ts" />
-///<reference path="typings/jquery/jquery.d.ts" />
 ///<reference path="IAppView.ts" />
 ///<reference path="app3DView.ts" />
 class BoxData {
@@ -26,6 +23,7 @@ enum BOX2D_TYPE {
     BorderOnly,
     Filled
 }
+
 enum BOX_TYPE {
     VM,
     WebSite,
@@ -124,11 +122,11 @@ class AzureLens {
             onExpandMenuStart:  ()=> {
                 this.expandedClose(null);
             },
-            onItemClick: () => {
+            onItemClick: (a:any,b:any,args:any[]) => {
 
                 this.expandedClose(null);
                 this.closePopup();
-                var element: HTMLElement = arguments[2][0];
+                var element: HTMLElement = args[0];
                 var anchor: HTMLAnchorElement = <HTMLAnchorElement>element.firstElementChild;
 
                 if (anchor.href.indexOf('#nav') > 0) {
@@ -225,7 +223,7 @@ class AzureLens {
 
         var $addTo = this.menu.multilevelpushmenu('findmenusbytitle', 'Browse').first();
 
-        var addItems = [{
+        var addItems = [{ 
             name: 'Diagrams',
             icon: '',
             link: '#',

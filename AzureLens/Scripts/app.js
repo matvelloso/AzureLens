@@ -1,7 +1,4 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
-///<reference path="typings/babylon.2.1.d.ts" />
-///<reference path="typings/waa.d.ts" />
-///<reference path="typings/jquery/jquery.d.ts" />
 ///<reference path="IAppView.ts" />
 ///<reference path="app3DView.ts" />
 var BoxData = (function () {
@@ -76,12 +73,8 @@ var AzureLens = (function () {
         this._objects = {};
         this.visualizer = new app3DView();
         this.visualizer.displayPopup = this.displayPopup;
-        document.getElementById("popupExpand").addEventListener("click", function (evt) {
-            _this.popupExpand(evt);
-        });
-        document.getElementById("expandedClose").addEventListener("click", function (evt) {
-            _this.expandedClose(evt);
-        });
+        document.getElementById("popupExpand").addEventListener("click", function (evt) { _this.popupExpand(evt); });
+        document.getElementById("expandedClose").addEventListener("click", function (evt) { _this.expandedClose(evt); });
         window.addEventListener('click', function (evt) {
             _this.visualizer.click(evt);
         });
@@ -118,10 +111,10 @@ var AzureLens = (function () {
             onExpandMenuStart: function () {
                 _this.expandedClose(null);
             },
-            onItemClick: function () {
+            onItemClick: function (a, b, args) {
                 _this.expandedClose(null);
                 _this.closePopup();
-                var element = arguments[2][0];
+                var element = args[0];
                 var anchor = element.firstElementChild;
                 if (anchor.href.indexOf('#nav') > 0) {
                     //Navigation menus
@@ -203,19 +196,17 @@ var AzureLens = (function () {
         this.menu.multilevelpushmenu('removeitems', diagramMenu);
         var $addTo = this.menu.multilevelpushmenu('findmenusbytitle', 'Browse').first();
         var addItems = [{
-            name: 'Diagrams',
-            icon: '',
-            link: '#',
-            items: [
-                {
-                    title: 'Diagrams',
-                    icon: '',
-                    link: '#',
-                    items: [
-                    ]
-                }
-            ]
-        }];
+                name: 'Diagrams',
+                icon: '',
+                link: '#',
+                items: [
+                    {
+                        title: 'Diagrams',
+                        icon: '',
+                        link: '#',
+                        items: []
+                    }]
+            }];
         addItems[0].items[0].items.unshift({
             name: "Upload your own diagram",
             icon: '',
@@ -237,19 +228,17 @@ var AzureLens = (function () {
         this.menu.multilevelpushmenu('removeitems', navigateMenu);
         $addTo = this.menu.multilevelpushmenu('findmenusbytitle', 'AzureLens').first();
         var addItems2 = [{
-            name: 'Navigate',
-            icon: 'fa fa-eye',
-            link: '#',
-            items: [
-                {
-                    title: 'Navigate',
-                    icon: 'fa fa-eye',
-                    link: '#',
-                    items: [
-                    ]
-                }
-            ]
-        }];
+                name: 'Navigate',
+                icon: 'fa fa-eye',
+                link: '#',
+                items: [
+                    {
+                        title: 'Navigate',
+                        icon: 'fa fa-eye',
+                        link: '#',
+                        items: []
+                    }]
+            }];
         data.objects.forEach(function (item) {
             if (item.pinnedToMenu == true) {
                 addItems2[0].items[0].items.unshift({

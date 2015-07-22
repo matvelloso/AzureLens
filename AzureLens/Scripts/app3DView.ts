@@ -1,6 +1,5 @@
 ﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
-///<reference path="typings/babylon.2.1.d.ts" />
-///<reference path="typings/waa.d.ts" />
+///<reference path="typings/babylon.2.2.d.ts" />
 ///<reference path="typings/jquery/jquery.d.ts" />
 ///<reference path="IAppView.ts" />
 class app3DView implements IAppView  {
@@ -208,12 +207,12 @@ class app3DView implements IAppView  {
         material0.emissiveTexture = new BABYLON.Texture(data.Image, this._scene, true, true);
         (<BABYLON.Texture>material0.emissiveTexture).uAng = Math.PI;
         (<BABYLON.Texture>material0.emissiveTexture).wAng = Math.PI;
-        (<BABYLON.Texture>material0.emissiveTexture).vAng = Math.PI;
+       // (<BABYLON.Texture>material0.emissiveTexture).vAng = Math.PI;
         (<BABYLON.Texture>material0.emissiveTexture).getAlphaFromRGB = true;
         (<BABYLON.Texture>material0.emissiveTexture).hasAlpha = true;
         (<BABYLON.Texture>material0.emissiveTexture).uScale = 3.5;
         (<BABYLON.Texture>material0.emissiveTexture).uOffset = 0.77;
-        (<BABYLON.Texture>material0.emissiveTexture).vOffset = 0.1;
+        (<BABYLON.Texture>material0.emissiveTexture).vOffset = 0;
         (<BABYLON.Texture>material0.emissiveTexture).vScale = 1.1;
         material0.useAlphaFromDiffuseTexture = false;
 
@@ -225,7 +224,7 @@ class app3DView implements IAppView  {
         multimat.subMaterials.push(material0);
         multimat.subMaterials.push(material1);
 
-        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 0.75, BABYLON.Space.LOCAL);
+        cylinder.rotate(new BABYLON.Vector3(0, 1, 0), Math.PI * 1.75, BABYLON.Space.LOCAL);
         cylinder.material = multimat;
         cylinder.subMeshes = [];
         var verticesCount = cylinder.getTotalVertices();

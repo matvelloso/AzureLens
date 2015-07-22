@@ -180,12 +180,12 @@
     },
 
     {
-      "id": "Azure SQL DB",
-      "type": "CYLINDER_TYPE.AzureSQL",
+      "id": "Azure Document DB",
+      "type": "CYLINDER_TYPE.DocumentDB",
       "position2": { "x": 1, "y": 20 },
       "pinnedToMenu": true,
-      "menuName": "8 - Azure SQL DB",
-      "description": "The diagrams and additional configuration are stored in a multi tenant DB model"    
+      "menuName": "8 - Document DB",
+      "description": "The diagrams and additional configuration are stored in a Document DB store"    
     },
     {
       "id": "box2d DB",
@@ -199,11 +199,11 @@
     {
       "id": "text DB",
       "type": "TEXT_TYPE.Flat",
-      "position2": { "x": -0.5, "y": 15 },
+      "position2": { "x": -1.5, "y": 15 },
       "color4": [ 1, 1, 1, 1 ],
       "fontSize": 60,
       "fontName": "Segoe UI",
-      "text": "SQL DB"
+      "text": "Document DB"
     },
     {
       "id": "Arrow SQL",
