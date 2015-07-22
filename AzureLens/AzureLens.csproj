@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AzureLens</RootNamespace>
     <AssemblyName>AzureLens</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -96,9 +96,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -347,6 +347,7 @@
     <None Include="Properties\PublishProfiles\azurelens-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens-test - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens.pubxml" />
+    <None Include="Properties\PublishProfiles\azurelens__test %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\azurelens__test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\hand.minified-1.2.js" />
