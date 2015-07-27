@@ -9,7 +9,7 @@
       "description": "AzureLens is a prototype for an interactive dashboard focused on designing, understanding and managing the architecture of your application on Microsoft Azure."    
     },
     {
-      "id": "box2d Web Server",
+      "id": "box2dWebServer",
       "type": "BOX2D_TYPE.BorderOnly",
       "points2": [
         { "x": -15, "y": -23 },
@@ -18,7 +18,7 @@
       "color4": [ 1, 1, 1, 1 ]
     },
     {
-      "id": "text Web Server",
+      "id": "textWebServer",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -2, "y": -24 },
       "color4": [ 1, 1, 1, 1 ],
@@ -49,7 +49,7 @@
       "description": "A user can create as many diagrams as needed to represent a sytem. Diagrams are represented in very simple JSON files that can even be edited in Notepad (but we will have a nice drag and drop experience on AzureLens itself for that)."    
     },
     {
-      "id": "text diagrams",
+      "id": "textdiagrams",
       "type": "TEXT_TYPE.Floating",
       "position2": { "x": -13, "y": -13 },
       "color4": [ 1, 1, 1, 1 ],
@@ -59,7 +59,7 @@
       "height": -1
     },
     {
-      "id": "ASP.Net Web API",
+      "id": "ASP.NetWebAPI",
       "type": "BOX2D_TYPE.Filled",
       "points2": [
         { "x": -5, "y": -7 },
@@ -71,7 +71,7 @@
       "description": "ASP.Net Web API/MVC are used so the UI can communicate with our server tier and provide the logic behind AzureLens."    
     },
     {
-      "id": "text ASP.Net",
+      "id": "textASP.Net",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -4.5, "y": -8.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -80,7 +80,7 @@
       "text": "ASP.Net Web API/MVC"
     },
     {
-      "id": "box2d server",
+      "id": "box2dserver",
       "type": "BOX2D_TYPE.BorderOnly",
       "points2": [
         { "x": -6, "y": -6 },
@@ -89,7 +89,7 @@
       "color4": [ 1, 1, 1, 1 ]
     },
     {
-      "id": "text Server",
+      "id": "textServer",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -1, "y": -11.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -98,7 +98,7 @@
       "text": "Server"
     },
     {
-      "id": "box2d UI",
+      "id": "box2dUI",
       "type": "BOX2D_TYPE.BorderOnly",
       "points2": [
         { "x": -8, "y": -14 },
@@ -107,7 +107,7 @@
       "color4": [ 1, 1, 1, 1 ]
     },
     {
-      "id": "text UI",
+      "id": "textUI",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -0.5, "y": -14.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -116,7 +116,7 @@
       "text": "UI"
     },
     {
-      "id": "User Interface",
+      "id": "UserInterface",
       "type": "BOX2D_TYPE.Filled",
       "points2": [
         { "x": -5, "y": -16 },
@@ -128,7 +128,7 @@
       "description": "The UI is build in HTML/TypeScript and provides two options: a lightweight 2D view in AngularJS and richer, 3D experience using Babylon.js. We aim to provide a nice touch/mouse/keyboard navigation experience across the whole application."    
     },
     {
-      "id": "text HTML5",
+      "id": "textHTML5",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -3.5, "y": -16.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -137,7 +137,7 @@
       "text": "HTML5/TypeScript"
     },
     {
-      "id": "text 2D",
+      "id": "text2D",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -6.5, "y": -19.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -146,7 +146,7 @@
       "text": "2D: Angular.js"
     },
     {
-      "id": "Angular JS",
+      "id": "AngularJS",
       "type": "BOX2D_TYPE.Filled",
       "points2": [
         { "x": -7, "y": -19 },
@@ -158,7 +158,7 @@
       "description": "Angular JS provides a very quick, easy to use single page application model for a 2D navigation experience that should work on most screens and device types."    
     },
     {
-      "id": "text 3D",
+      "id": "text3D",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": 1.5, "y": -19.5 },
       "color4": [ 1, 1, 1, 1 ],
@@ -167,7 +167,7 @@
       "text": "3D: Babylon.js"
     },
     {
-      "id": "Babylon JS",
+      "id": "BabylonJS",
       "type": "BOX2D_TYPE.Filled",
       "points2": [
         { "x": 1, "y": -19 },
@@ -180,7 +180,7 @@
     },
 
     {
-      "id": "Azure Document DB",
+      "id": "AzureDocumentDB",
       "type": "CYLINDER_TYPE.DocumentDB",
       "position2": { "x": 1, "y": 20 },
       "pinnedToMenu": true,
@@ -188,7 +188,7 @@
       "description": "The diagrams and additional configuration are stored in a Document DB store"    
     },
     {
-      "id": "box2d DB",
+      "id": "box2dDB",
       "type": "BOX2D_TYPE.BorderOnly",
       "points2": [
         { "x": -3, "y": 16 },
@@ -197,7 +197,7 @@
       "color4": [ 1, 1, 1, 1 ]
     },
     {
-      "id": "text DB",
+      "id": "textDB",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": -1.5, "y": 15 },
       "color4": [ 1, 1, 1, 1 ],
@@ -206,7 +206,7 @@
       "text": "Document DB"
     },
     {
-      "id": "Arrow SQL",
+      "id": "ArrowSQL",
       "type": "ARROW_TYPE.ArrowTip",
       "points2": [
         { "x": 1, "y": 6 },
@@ -227,7 +227,7 @@
       "description": "ARM API is used by the .Net code in order to communicate with Azure resources."
     },
     {
-      "id": "text ARM",
+      "id": "textARM",
       "type": "TEXT_TYPE.Flat",
       "position2": { "x": 19, "y": -3 },
       "color4": [ 1, 1, 1, 1 ],
@@ -236,7 +236,7 @@
       "text": "Azure Resource Manager API"
     },
     {
-      "id": "Arrow ARM",
+      "id": "ArrowARM",
       "type": "ARROW_TYPE.ArrowTip",
       "points2": [
         { "x": 7, "y": -9 },
