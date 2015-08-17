@@ -1,4 +1,4 @@
-﻿{
+{
   "objects": [
     {
       "id": "WebSite",
@@ -211,7 +211,10 @@
     {
       "id": "HDInsight",
       "type": "BOX_TYPE.HDInsight",
-      "position2": { "x": 10, "y": 70 }
+      "position2": { "x": 10, "y": 70 },
+      "pinnedToMenu": true,
+      "menuName": "6 - Hadoop",
+      "description": "As the data grows, Hadoop becomes necessary as a way or handling large scale queries."
     },
     {
       "id": "box2dHadoop",
